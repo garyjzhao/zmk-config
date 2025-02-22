@@ -53,24 +53,32 @@
             bindings = <&kp EXCLAMATION>;
             key-positions = <1 11>;
             layers = <0>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_at {
             bindings = <&kp AT>;
             key-positions = <2 12>;
             layers = <0>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_hash {
             bindings = <&kp HASH>;
             key-positions = <3 13>;
             layers = <0>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_ampberstand {
             bindings = <&kp AMPS>;
             key-positions = <4 14>;
             layers = <0>;
+            timeout-ms = <70>;
+            require-prior-idle-ms = <100>;
         };
 
         combo_cmd_tab {
