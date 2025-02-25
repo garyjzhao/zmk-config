@@ -106,15 +106,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        lt_bspc: layer_tap_bspc_del {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_BACKSPACE_DELETE";
-            #binding-cells = <2>;
-            bindings = <&mo>, <&bspc_del>;
-
-            tapping-term-ms = <200>;
-        };
-
         tap_macro: tap_macro {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_MACRO";
@@ -122,6 +113,73 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&macro_dollar_curly>;
 
             tapping-term-ms = <200>;
+        };
+
+        mt_left: mt_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <50>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <32 33 34 35 36 37 5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+            hold-trigger-on-release;
+        };
+
+        mt_right: mt_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <170>;
+            require-prior-idle-ms = <50>;
+            flavor = "balanced";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34 35 36 37>;
+        };
+
+        mt_shift_left: mt_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_SHIFT_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <20>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <32 33 34 35 36 37 5 6 7 8 9 15 16 17 18 19 26 27 28 29 30 31 35 36 37>;
+        };
+
+        mt_shift_right: mt_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_SHIFT_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <20>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 25 32 33 34 35 36 37>;
+        };
+
+        mt_all: mt_all {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_ALL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <175>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <35>;
+            flavor = "balanced";
+            hold-trigger-on-release;
         };
     };
 
@@ -147,10 +205,10 @@
         base_layer {
             label = "Base Layer";
             bindings = <
-                       &kp Q  &kp W  &kp E     &kp R                 &kp T                   &kp Y                  &kp U             &kp I                &kp O    &kp P
-                       &kp A  &kp S  &kp D     &kp F                 &kp G                   &kp H                  &kp J             &kp K                &kp L    &kp SEMICOLON
-&mt LEFT_SHIFT ESCAPE  &kp Z  &kp X  &kp C     &kp V                 &kp B                   &kp N                  &kp M             &kp COMMA            &kp DOT  &kp SLASH      &mt RIGHT_SHIFT SQT
-                                     &kp LGUI  &lt_bspc LAYONE BASE  &mt LEFT_SHIFT SPACE    &mt RIGHT_SHIFT SPACE  &lt LAYTWO ENTER  &mt RIGHT_ALT MINUS
+                       &kp Q  &kp W                      &kp E                    &kp R                        &kp T                   &kp Y                  &kp U             &kp I                &kp O    &kp P
+                       &kp A  &mt_shift_left LEFT_ALT S  &mt_left LEFT_COMMAND D  &mt_shift_left LEFT_SHIFT F  &kp G                   &kp H                  &kp J             &kp K                &kp L    &kp SEMICOLON
+&mt LEFT_SHIFT ESCAPE  &kp Z  &kp X                      &kp C                    &kp V                        &kp B                   &kp N                  &kp M             &kp COMMA            &kp DOT  &kp SLASH      &mt RIGHT_SHIFT SQT
+                                                         &kp LGUI                 &lt 1 BACKSPACE              &mt LEFT_SHIFT SPACE    &mt RIGHT_SHIFT SPACE  &lt LAYTWO ENTER  &mt RIGHT_ALT MINUS
             >;
         };
 
