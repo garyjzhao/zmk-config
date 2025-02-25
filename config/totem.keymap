@@ -92,6 +92,16 @@
             key-positions = <12 13>;
             layers = <1>;
         };
+
+        ENTER_HOME_LEFT {
+            bindings = <&kp ENTER>;
+            key-positions = <13 12 11>;
+        };
+
+        ENTER_HOME_RIGHT {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+        };
     };
 
     behaviors {
