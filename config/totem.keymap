@@ -114,12 +114,12 @@
         };
 
         combo_copy {
-            bindings = <&kp C_AC_COPY>;
+            bindings = <&macro_copy>;
             key-positions = <22 23>;
         };
 
         combo_paste {
-            bindings = <&kp C_AC_PASTE>;
+            bindings = <&macro_paste>;
             key-positions = <23 24>;
         };
     };
@@ -238,6 +238,20 @@
             #binding-cells = <0>;
             bindings = <&kp DOLLAR &kp LEFT_BRACE>;
             label = "MACRO_DOLLAR_CURLY";
+        };
+
+        macro_copy: macro_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(C)>;
+            label = "MACRO_COPY";
+        };
+
+        macro_paste: macro_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(V)>;
+            label = "MACRO_PASTE";
         };
     };
 
