@@ -259,10 +259,10 @@
         LAYONE {
             label = "Layer One";
             bindings = <
-        &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3   &kp NUMBER_4       &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-        &mission_control  &trans            &trans         &trans             &trans          &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
-&trans  &trans            &kp LA(LC(LEFT))  &kp LA(LC(C))  &kp LA(LC(RIGHT))  &trans          &trans        &trans        &trans        &trans        &trans        &trans
-                                            &trans         &trans             &trans          &trans        &trans        &trans
+        &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3   &kp NUMBER_4       &kp NUMBER_5       &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+        &mission_control  &trans            &trans         &kp K_MUTE         &kp C_VOLUME_UP    &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
+&trans  &trans            &kp LA(LC(LEFT))  &kp LA(LC(C))  &kp LA(LC(RIGHT))  &kp C_VOL_DN       &trans        &trans        &trans        &trans        &trans        &trans
+                                            &trans         &trans             &trans             &trans        &trans        &trans
             >;
         };
 
