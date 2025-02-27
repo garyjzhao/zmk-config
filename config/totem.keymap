@@ -44,7 +44,7 @@
         };
 
         combo_play {
-            bindings = <&kp C_PLAY_PAUSE>;
+            bindings = <&td_play_next>;
             key-positions = <4 3>;
             layers = <0>;
         };
@@ -101,6 +101,16 @@
         ENTER_HOME_RIGHT {
             bindings = <&kp ENTER>;
             key-positions = <16 17 18>;
+        };
+
+        left_brace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <6 7>;
+        };
+
+        right_brace {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <7 8>;
         };
     };
 
@@ -190,6 +200,13 @@
             require-prior-idle-ms = <35>;
             flavor = "balanced";
             hold-trigger-on-release;
+        };
+
+        td_play_next: td_play_next {
+            compatible = "zmk,behavior-tap-dance";
+            label = "td_play_next";
+            #binding-cells = <0>;
+            bindings = <&kp C_PLAY_PAUSE>, <&kp C_NEXT>;
         };
     };
 
