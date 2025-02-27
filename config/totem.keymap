@@ -88,7 +88,7 @@
         };
 
         combo_arrow {
-            bindings = <&td_macro_arrow>;
+            bindings = <&macro_arrow>;
             key-positions = <12 13>;
             layers = <1>;
         };
@@ -126,15 +126,6 @@
 
     behaviors {
         // https://www.reddit.com/r/zmk/comments/12ujlmb/combing_modmorph_and_layer_tap/
-
-        bspc_del: backspace_delete {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BACKSPACE_DELETE";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LA(BSPC)>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
 
         mt_left: mt_left {
             compatible = "zmk,behavior-hold-tap";
@@ -253,6 +244,13 @@
             bindings = <&kp LG(V)>;
             label = "MACRO_PASTE";
         };
+
+        mission_control: mission_control {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RC(UP_ARROW)>;
+            label = "MISSION_CONTROL";
+        };
     };
 
     keymap {
@@ -271,10 +269,10 @@
         LAYONE {
             label = "Layer One";
             bindings = <
-        &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3     &kp NUMBER_4        &kp NUMBER_5            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
-        &trans        &trans            &td_macro_arrow  &td_curly_function  &kp LEFT_BRACKET        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
-&trans  &trans        &kp LA(LC(LEFT))  &kp LA(LC(C))    &kp LA(LC(RIGHT))   &kp LEFT_PARENTHESIS    &trans        &trans        &trans        &trans        &trans        &trans
-                                        &trans           &trans              &trans                  &trans        &trans        &trans
+        &kp NUMBER_1      &kp NUMBER_2      &kp NUMBER_3   &kp NUMBER_4       &kp NUMBER_5            &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0
+        &mission_control  &trans            &kp EQUAL      &kp LEFT_BRACE     &kp LEFT_BRACKET        &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans
+&trans  &trans            &kp LA(LC(LEFT))  &kp LA(LC(C))  &kp LA(LC(RIGHT))  &kp LEFT_PARENTHESIS    &trans        &trans        &trans        &trans        &trans        &trans
+                                            &trans         &trans             &trans                  &trans        &trans        &trans
             >;
         };
 
